@@ -1,4 +1,4 @@
-# playing-styles-and-tournament-rules
+# players-characteristics-and-tournament-rules
 
 # Master’s thesis
 # Master of Data Science

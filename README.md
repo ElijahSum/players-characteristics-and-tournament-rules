@@ -54,15 +54,17 @@ The thesis also reports several unsupported mechanisms. The data do not show rob
 
 The main player-game panel covers Chess.com Titled Tuesday games from February 2022 through April 2026. It combines tournament metadata, player names, ratings, titles, colors, rounds, event identifiers, outcomes, accuracy measures, and available demographic or country-linked variables.
 
-The move-level analysis uses Chess.com PGNs, clock annotations, and Stockfish evaluations. The final Stockfish mechanism sample contains:
+The move-level archive uses Chess.com PGNs, clock annotations, and Stockfish evaluations from two local output folders:
 
-- 27,517,197 usable move-level observations;
-- 319,095 games;
-- 616,731 player-games;
-- 5,768 players;
-- 148 tournaments.
+| Source folder | Stockfish move rows | PGN game records | Unique PGN game IDs | Players in PGN headers | Tournament URLs |
+|---|---:|---:|---:|---:|---:|
+| `whole_dataset_2022_2024` | 42,433,430 | 484,197 | 484,197 | 5,802 | 261 |
+| `whole_dataset_2024_2026` | 28,435,053 | 321,059 | 321,059 | 6,103 | 148 |
+| Combined | 70,868,483 | 805,256 | 799,056 | 8,053 | 406 |
 
-The clock-augmented mechanism sample contains about 1.56 million matched player-games and 69.0 million weighted move observations. The neural style model is trained on pre-change move sequences for eligible repeated players and produces player-level style embeddings and clusters.
+The combined PGNs contain 6,200 duplicate game IDs across the overlapping folders, so the summed PGN game-record count is 805,256 while the unique game-ID count is 799,056. In the Stockfish CSVs, 794,912 distinct game IDs have move rows, producing 1,586,088 observed player-games with at least one move and 70,325,599 unique `(game_id, ply)` rows after de-duplicating repeated games.
+
+The neural style model is trained on pre-change move sequences for eligible repeated players and produces player-level style embeddings and clusters.
 
 ## Repository Structure
 

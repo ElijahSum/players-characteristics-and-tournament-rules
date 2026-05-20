@@ -54,7 +54,7 @@ The thesis also reports several unsupported mechanisms. The data do not show rob
 
 The main player-game panel covers Chess.com Titled Tuesday games from February 2022 through April 2026. It combines tournament metadata, player names, ratings, titles, colors, rounds, event identifiers, outcomes, accuracy measures, and available demographic or country-linked variables.
 
-The move-level archive uses Chess.com PGNs, clock annotations, and Stockfish evaluations from two local output folders:
+The move-level archive uses Chess.com PGNs, clock annotations, and Stockfish evaluations from two local output folders. Since I scraped all the data in two iterations, I have two final datasets:
 
 | Source folder | Stockfish move rows | PGN game records | Unique PGN game IDs | Players in PGN headers | Tournament URLs |
 |---|---:|---:|---:|---:|---:|

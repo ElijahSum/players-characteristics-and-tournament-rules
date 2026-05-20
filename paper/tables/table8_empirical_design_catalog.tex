@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\caption{Empirical Designs and Interpretation of Key Coefficients}
+\label{tab:empirical-design-catalog}
+\small
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{p{0.19\textwidth} p{0.24\textwidth} p{0.25\textwidth} p{0.25\textwidth}}
+\toprule
+Design layer & Estimand & Main controls and fixed effects & Interpretation \\
+\midrule
+Player-game treatment heterogeneity & \(\text{Post} \times X_{igt}\) in result or accuracy models & Player FE, event FE, ratings, color, round FE; clustered by player and event & Whether a player trait or game circumstance became more valuable after the switch to 5+0 \\
+Paired-game fixed effects & \(\text{Post} \times X_{igt}\) with game FE & Player FE and game FE; comparison across the two sides of the same game & Robustness check absorbing all game-level shocks shared by both players \\
+Accuracy production function & \(\text{Post} \times \text{AccuracyDiff10}_{igt}\) & Player FE, event FE or game FE, round/color/rating controls & Whether realized move-quality advantages converted more strongly into points under 5+0 \\
+Time-slot displacement & \(\text{Post} \times \text{PreLateShare}_{i}\) or late-regular indicators & Player FE and event FE for games/events; player-level controls for participation & Whether removal of the late slot affected participation, completion, score, and rank \\
+Move-level Stockfish mechanisms & \(\text{Post} \times M_{igmt}\) and triple interactions & Player FE, tournament FE, move-number FE; clustered by player and tournament & Whether late, final, critical, or complex positions became more costly after the reform \\
+Clock-time mechanisms & \(\text{Post} \times C_{igmt}\), clock-bin interactions, and first-low-clock event studies & Player FE, event FE, move-number FE or player-game aggregations; clustered by player & Whether severe time trouble, increment removal, and opponent clock weakness changed move quality and conversion under 5+0 \\
+Conversion and recovery & \(\text{Post} \times \text{RatingDiff100}_{igt}\) after reaching +2 or -2 & Player-game outcomes with player and tournament controls & Whether stronger players managed winning and losing positions more effectively under 5+0 \\
+Pre-change style traits & \(\text{Post} \times S_i^{pre}\) & Player FE, event FE, rating/color/round controls & Whether predetermined playing styles or skills became more or less rewarded after the reform \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

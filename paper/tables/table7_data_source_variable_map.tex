@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering
+\caption{Data Sources, Matching Steps, and Constructed Variables}
+\label{tab:data-source-map}
+\small
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{p{0.18\textwidth} p{0.25\textwidth} p{0.27\textwidth} p{0.23\textwidth}}
+\toprule
+Source & Raw information & Processing step & Main variables used in analysis \\
+\midrule
+Chess.com tournament pages & Event pages, round pairings, colors, ratings, results, final standings & Scrape tournament and game metadata; reshape games into two player-game observations & Player result, round, color, event fixed effects, rating difference, tournament score, rank, completion \\
+Chess.com game pages and PGNs & Move sequence, game link, ECO/opening metadata, result, clock annotations & Fetch PGNs; parse legal moves; reconstruct board states and clock states & Opening depth, move number, phase, final-ten-ply indicator, simplification, complexity, remaining time, time spent, low-clock indicators \\
+Chess.com accuracy pages & Accuracy after Chess.com analysis is available or calculated & Automated browser workflow to trigger and scrape missing accuracy & Player accuracy, accuracy difference, accuracy-to-points production-function outcomes \\
+Stockfish engine output & Position evaluations before and after each move & Evaluate moves at fixed node budget; compute player-perspective centipawn loss & Capped centipawn loss, inaccuracy/mistake/blunder indicators, +2 conversion, -2 recovery, critical/equal positions \\
+Chess.com profiles and FIDE ratings & Real names, federation, gender, age/birth year, classical/rapid/blitz ratings & Scrape profile names, manual/LLM-assisted search for missing names, fuzzy matching to FIDE profiles & Age, gender, federation, FIDE ratings, online-over-classical and online-over-blitz capital \\
+World Bank WDI & GDP per capita PPP by country and year & Match to player federation and event year & Log GDP PPP, GDP gaps, country-income heterogeneity and prize-salience tests \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

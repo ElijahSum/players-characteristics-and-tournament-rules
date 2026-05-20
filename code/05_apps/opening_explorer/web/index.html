@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titled Tuesday Opening Explorer</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="board-panel">
+      <div class="topbar">
+        <div>
+          <h1>Titled Tuesday Opening Explorer</h1>
+          <p id="statusText">Loading starting position...</p>
+        </div>
+        <div class="toolbar">
+          <button id="resetBtn" type="button">Reset</button>
+          <button id="undoBtn" type="button">Undo</button>
+          <button id="flipBtn" type="button">Flip</button>
+        </div>
+      </div>
+      <div class="board-wrap">
+        <div id="board" class="board" aria-label="Chess board"></div>
+      </div>
+      <div class="fen-row">
+        <input id="fenInput" type="text" spellcheck="false" aria-label="FEN input">
+        <button id="loadFenBtn" type="button">Load FEN</button>
+      </div>
+    </section>
+
+    <aside class="explorer-panel">
+      <div class="opening-card">
+        <div class="section-title">Opening Name</div>
+        <div id="openingList" class="opening-list"></div>
+      </div>
+
+      <div class="games-card">
+        <div class="section-title">Highest-Rated Games</div>
+        <div id="topGamesMessage" class="games-message"></div>
+        <div id="topGamesList" class="games-list"></div>
+      </div>
+
+      <div class="moves-card">
+        <div class="section-title">Top Titled Tuesday Moves</div>
+        <div id="emptyMessage" class="empty-message" hidden></div>
+        <div id="movesList" class="moves-list"></div>
+      </div>
+    </aside>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

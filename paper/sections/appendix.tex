@@ -1,0 +1,70 @@
+\section{Repository and Reproducibility Notes}
+
+The thesis project is stored in the GitHub/Overleaf repository:
+
+\begin{quote}
+\url{https://github.com/ElijahSum/Master-Thesis-HSE}
+\end{quote}
+
+The current LaTeX project contains the following main files and folders:
+
+\begin{itemize}
+    \item \texttt{main.tex}: main LaTeX file;
+    \item \texttt{sections/}: thesis section files;
+    \item \texttt{references.bib}: bibliography;
+    \item \texttt{figures/}: generated thesis figures;
+    \item \texttt{tables/}: generated stargazer table outputs.
+\end{itemize}
+
+The public replication package is organized as a staged workflow. The main code folders are:
+
+\begin{itemize}
+    \item \texttt{code/01\_data\_collection/}: accuracy scraping, player metadata enrichment, and PGN fetching;
+    \item \texttt{code/02\_data\_construction/}: final panel construction, Stockfish evaluation, clock features, move mechanisms, and style features;
+    \item \texttt{code/03\_analysis/}: game-level, move-level, and clock-time econometric analysis;
+    \item \texttt{code/04\_reporting/}: table and figure generation scripts;
+    \item \texttt{code/05\_apps/}: optional opening-explorer application.
+\end{itemize}
+
+\section{Generated Tables and Figures}
+
+The project contains stargazer-generated tables created by \path{../code/04_reporting/table_scripts/create_master_thesis_tables.R}. The LaTeX copies are stored in \texttt{tables/}:
+
+\begin{itemize}
+    \item \texttt{table1\_baseline\_game\_level\_effects.tex};
+    \item \texttt{table2\_rating\_advantage\_robustness.tex};
+    \item \texttt{table3\_time\_slot\_displacement.tex};
+    \item \texttt{table4\_move\_mechanisms.tex};
+    \item \texttt{table5\_style\_index\_interactions.tex};
+    \item \texttt{table6\_null\_and\_weak\_results.tex}.
+\end{itemize}
+
+The figures were created by \texttt{../code/04\_reporting/figure\_scripts/create\_master\_thesis\_figures.py}. Static PNG figures are included in the thesis. The interactive Plotly neural cluster map is also stored as \texttt{figures/figure6\_neural\_style\_cluster\_map.html}.
+
+Additional presentation figures for this thesis draft were created by \path{../code/04_reporting/figure_scripts/create_advanced_thesis_visuals.py}. These include the data architecture map, the rating-advantage robustness plot, the Stockfish mechanism dashboard, and the clean-outline evidence map. The interpretable style-feature PCA figure was created by \path{../code/04_reporting/figure_scripts/create_style_pca_figure.py}.
+
+\section{Main Data Inputs}
+
+The main player-game regression dataset is:
+
+\begin{quote}
+\path{data/final_regression_data_tournaments_2022_2026.csv}
+\end{quote}
+
+The two Stockfish centipawn-loss outputs used for the final move-level analysis are:
+
+\begin{quote}
+\path{outputs/whole_dataset_2022_2024/centipawn_loss_nodes2000_watch/centipawn_loss_watch.csv}
+\end{quote}
+
+\begin{quote}
+\path{outputs/whole_dataset_2024_2026/centipawn_loss_nodes2000_watch/centipawn_loss_watch.csv}
+\end{quote}
+
+The PGN input used for the most recent move-data construction is:
+
+\begin{quote}
+\path{outputs/whole_dataset_2024_2026/whole_dataset_2024_2026.pgn}
+\end{quote}
+
+The current move-mechanism output uses a merged Stockfish and metadata sample of 27,517,197 usable move rows and 616,731 player-games.

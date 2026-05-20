@@ -1,0 +1,25 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Fri, May 15, 2026 - 02:07:30
+\begin{table}[!htbp] \centering 
+  \caption{Move-Level and Stockfish Mechanism Estimates} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Result & Outcome & Term & Estimate & SE & P & Q & Sig & N & Unit \\ 
+\hline \\[-1.8ex] 
+Late phase error & Capped centipawn loss & format\_5\_0:late\_phase & 2.0566 & 0.3245 & \textless 0.001 & 0.0000 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 27,517,197 & Endgame phase, fullmove 36+ \\ 
+Last-10-ply error & Capped centipawn loss & format\_5\_0:last\_10\_ply & 2.7231 & 0.4975 & \textless 0.001 & 0.0000 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 27,517,197 & Final 10 plies of the game \\ 
+Critical/equal blunder & Blunder probability & format\_5\_0:critical\_equal & 0.0020 & 0.0003 & \textless 0.001 & 0.0000 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 27,517,197 & Pre-move abs(eval) \textless  100 cp \\ 
+Critical/equal CPL & Capped centipawn loss & format\_5\_0:critical\_equal & 0.7466 & 0.1795 & \textless 0.001 & 0.0001 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 27,517,197 & Pre-move abs(eval) \textless  100 cp \\ 
+Winning conversion & Converted winning position & format\_5\_0:rating\_diff100 & 0.0033 & 0.0007 & \textless 0.001 & 0.0000 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 310,068 & Post-change slope per +100 rating advantage \\ 
+Defensive escape & Escaped losing position & format\_5\_0:rating\_diff100 & 0.0040 & 0.0008 & \textless 0.001 & 0.0000 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 309,992 & Post-change slope per +100 rating advantage \\ 
+Conversion speed after +2 & Plies to conversion & format\_5\_0:rating\_diff100 & -0.1425 & 0.0302 & \textless 0.001 & 0.0000 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 367,694 & Post-change slope per +100 rating advantage \\ 
+Recovery after -2 & Defensive recovery probability & format\_5\_0:rating\_diff100 & 0.0026 & 0.0006 & \textless 0.001 & 0.0000 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 366,072 & Post-change slope per +100 rating advantage \\ 
+First blunder timing by age & First blunder move & format\_5\_0:age10\_c & -0.3315 & 0.0735 & \textless 0.001 & 0.0000 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 369,433 & Post-change slope per +10 years of age \\ 
+First blunder timing by female status & First blunder move & format\_5\_0:female & -1.0663 & 0.2541 & \textless 0.001 & 0.0001 & \textasteriskcentered \textasteriskcentered \textasteriskcentered  & 369,433 & Female post-change shift \\ 
+\hline \\[-1.8ex] 
+\multicolumn{10}{l}{Move-level models use player/tournament/move controls; player-game models use player-game outcomes derived from Stockfish evaluations.} \\ 
+\end{tabular} 
+\end{table} 

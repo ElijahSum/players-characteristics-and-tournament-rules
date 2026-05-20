@@ -1,0 +1,125 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[most]{tcolorbox}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pdflscape}
+\usepackage{adjustbox}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\geometry{left=30mm,right=15mm,top=20mm,bottom=20mm}
+\onehalfspacing
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{1.25em}
+\captionsetup{font=small,labelfont=bf}
+
+\newcommand{\thesistitle}{Player Characteristics and Adaptability to Temporal Constraints: Evidence from Titled Tuesday Chess Tournaments}
+\newcommand{\thesisauthor}{Ilia Sumernikov}
+\newcommand{\thesisprogramme}{Data Science}
+\newcommand{\thesisuniversity}{National Research University Higher School of Economics}
+\newcommand{\thesisfaculty}{Faculty of Computer Science}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\title{\textbf{\thesistitle}}
+\author{\thesisauthor}
+\date{Master Thesis, May 2026}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+% HSE-style title page adapted from the super-position/hse-thesis-template-latex prototype.
+\begin{titlepage}
+\begin{center}
+
+\begin{minipage}{0.99\textwidth}
+\begin{flushleft}
+\includegraphics[width=7.5cm]{figures/logo_hse.jpg}
+\end{flushleft}
+\end{minipage}
+
+\vspace{0.8cm}
+
+{\large \thesisuniversity\par}
+\vspace{1.1cm}
+{\Large\bfseries\itshape \thesisfaculty\par}
+\vspace{0.35cm}
+{\large Master of \thesisprogramme\par}
+
+\vspace{1.1cm}
+
+{\large \thesisauthor\par}
+
+\vspace{0.7cm}
+
+\HRule\\[0.35cm]
+{\LARGE\bfseries \thesistitle\par}
+\HRule\\[1.0cm]
+
+{\large Qualification paper -- Master of Science Dissertation\par}
+\vspace{0.25cm}
+{\large Educational programme: \thesisprogramme\par}
+
+\vspace{1.2cm}
+
+\begin{minipage}{0.82\textwidth}
+\begin{flushright}
+\large
+Student: \thesisauthor\\[0.25cm]
+Academic supervisor: Dmitry Dagaev \\
+May 2026
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+{\large Moscow, 2026\par}
+\end{center}
+\end{titlepage}
+
+\pagenumbering{roman}
+
+\begin{abstract}
+This thesis studies how a real institutional change in elite online chess tournament Titled Tuesday affected player performance, participation and the tournament production function. The most popular chess website Chess.com changed Titled Tuesday format from a 3+1 increment format with two weekly time slots to a 5+0 no-increment format with one main weekly slot in September 2025. This tournament brings together a group of top-tier players who repeatedly face opponents of similar caliber in an environment where every move is meticulously recorded. The analysis combines game-level econometrics, tournament-level participation models, Stockfish move evaluation, per-move clock annotations, interpretable style features, and a neural contrastive style model. The main results show that the new format increased the return to relative skill, made accuracy advantages convert more strongly into points, and shifted the mechanism toward conversion and defensive recovery in engine-evaluated positions. Clock evidence shows a more precise mechanism: 5+0 reduced ordinary low-clock exposure because players started with more time, but once severe time trouble occurred, errors became more costly and recovery from low-clock states nearly disappeared. Young players and players with strong online-platform capital adapted to the change in rules better. At the same time, old late-slot regulars were hurt mostly through participation and completion margins. Move-level evidence shows higher late-game and critical-position costs under 5+0, stronger conversion from winning positions by rating favorites, broad raw accuracy gains across neural style clusters, and lower relative score returns to historically chaotic playing styles. We didn't find empirical evidence in support of several other mechanisms, including a broad White-pieces advantage shift, GDP-based conditional performance effects, complex-position deterioration, opening preparation as the main channel, or robust simplification adaptation.
+\end{abstract}
+
+\noindent\textbf{Keywords:} chess, online tournaments, time constraints, clock time, fixed effects, chess engines, centipawn loss, player style, contrastive learning, data science, econometrics.
+
+\newpage
+\tableofcontents
+\newpage
+\hypersetup{pageanchor=true}
+\pagenumbering{arabic}
+
+\input{sections/01_introduction}
+\input{sections/02_literature_review}
+\input{sections/03_data}
+\input{sections/04_methodology}
+\input{sections/05_results}
+\input{sections/06_null_results}
+\input{sections/07_conclusion}
+
+\newpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\newpage
+\appendix
+\input{sections/appendix}
+
+\end{document}

@@ -1,0 +1,23 @@
+[project]
+name = "titled-tuesday-master-thesis-replication"
+version = "0.1.0"
+description = "Code-only replication package for the Titled Tuesday master thesis."
+requires-python = ">=3.12"
+dependencies = [
+  "beautifulsoup4",
+  "certifi",
+  "duckdb",
+  "matplotlib",
+  "numpy",
+  "openpyxl",
+  "pandas",
+  "plotly",
+  "playwright",
+  "python-chess",
+  "requests",
+  "scikit-learn",
+  "scipy",
+  "torch",
+  "tqdm",
+]
+

@@ -1,0 +1,109 @@
+\section{Null, Weak, and Unsupported Results}
+
+This section reports analyses that were implemented but did not produce robust evidence. These results are important because they rule out simple mechanisms that would otherwise be tempting explanations for the reform.
+
+\subsection{Player and Game-Level Null Results}
+
+\subsubsection{Broad Female-Status Effects}
+
+The broad \(\text{Post} \times \text{Female}\) interaction is not robust for overall result or accuracy. Female-status interactions in late-round player-game models are also not statistically stable. A mixed-gender within-game score result is statistically strong: the female side lost about 2.6 percentage points of score share after the switch in mixed-gender games. However, this result is not matched by a clear accuracy effect and applies only to a selected subset of games. For this reason the thesis treats gender as a secondary heterogeneity result rather than a main headline.
+
+\subsubsection{GDP and Resource Advantage}
+
+The data do not support a robust conditional-performance effect of country GDP. Interactions between the post indicator and log GDP are not statistically clear for result or accuracy. Within-game GDP-gap models also do not produce robust performance differences. Country resources may matter for long-run chess development, training infrastructure, or participation selection, but the current Titled Tuesday panel does not show a clean post-change per-game performance effect.
+
+\subsubsection{Country Local-Time Exposure}
+
+Several country-time mechanisms were tested, including remaining-slot inconvenience, lost second-slot convenience, work-hour exposure, sleep-hour exposure, and seasonal time-zone burden. These variables do not robustly explain per-game result or accuracy after the reform. Some participation and rank-selection patterns appear for Asia/Oceania, but they are not strong enough to be treated as a main conditional-performance channel.
+
+\subsubsection{White Advantage}
+
+There is no robust evidence that the switch to 5+0 meaningfully changed White's advantage. This matters because one simple story would be that no-increment chess increases the payoff to opening initiative or first-move pressure. The data do not support that as a central mechanism.
+
+\subsubsection{Generic FIDE Speed-Chess Specialization}
+
+The evidence favors Chess.com-specific online capital rather than generic FIDE speed-chess specialization. FIDE blitz-over-classical and rapid-over-classical measures do not produce robust positive effects comparable to the Chess.com-over-classical gap. This distinction supports the interpretation that online platform skills matter, not only general faster-time-control chess ability.
+
+\subsubsection{Close Games and Generic Decisiveness}
+
+Game-level checks do not show that ex ante close games became generically more decisive or developed larger accuracy gaps. This rules out a broad chaos interpretation in which the new format simply makes close games more random. The stronger result is more specific: rating favorites convert better, and realized accuracy advantages translate more strongly into points.
+
+\subsubsection{Consecutive Black Burden}
+
+The consecutive-Black hypothesis is not supported at the clean per-game level. Interactions between the post indicator and Black streak variables are not statistically clear in the main specifications. Some exploratory final-outcome color-streak variables appear later in the research logs, but the main player-game evidence does not support a central consecutive-color mechanism.
+
+\subsubsection{Learning-by-Doing After the Reform}
+
+Raw post-change exposure bins look like players improve with repeated participation in 5+0. However, fixed-effect learning models do not support a positive learning-by-doing effect. In some specifications, the coefficient on post-change game number is negative for result. This likely reflects selection and repeated-entry composition rather than true within-player adaptation. The thesis therefore avoids claiming that players learned the new format quickly over the observed post-period.
+
+\subsubsection{Hard Tournament Paths}
+
+Harder tournament paths, measured by Buchholz or opponents' cumulative scores, are associated with worse outcomes. But placebo and pretrend tests show that this pattern is not cleanly tied to the September 2025 reform. The hard-path variables are useful as controls and descriptive tournament-sorting measures, but not as a main causal mechanism.
+
+\subsubsection{Lagged Loss and Tilt}
+
+Previous losses and unexpected losses affect next-game outcomes, which confirms that tilt or momentum exists in Titled Tuesday. The rule-change interactions, however, are mostly not robust. The evidence does not show that the 5+0 reform created a new tilt mechanism or strongly changed the next-game effect of previous losses.
+
+\begin{table}[H]
+\centering
+\caption{Selected Null and Weak Results}
+\label{tab:null-results}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lll}
+\toprule
+Area & Tested mechanism & Current conclusion \\
+\midrule
+Gender & Broad female post interaction & No robust overall result or accuracy effect \\
+Country resources & GDP post interaction & No robust conditional performance effect \\
+Country time zones & Lost-slot and local-time exposure & Weak for per-game outcomes \\
+Color & White advantage under 5+0 & No meaningful post-change shift \\
+Speed specialization & FIDE blitz/rapid gaps & Weaker than Chess.com-specific capital \\
+Close games & Decisiveness and accuracy dispersion & No broad chaos result \\
+Color streaks & Consecutive Black burden & Not supported in clean per-game models \\
+Learning & Repeated post-change exposure & No clean positive learning effect \\
+Tournament path & Buchholz and opponent path & Descriptive, not cleanly causal \\
+Tilt & Lagged losses and upsets & Tilt exists, reform interaction weak \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\subsection{Move-Level Null Results}
+
+\subsubsection{Opening Preparation}
+
+Opening preparation was tested using Chess.com ECO information, book-exit move, evaluation at book exit, post-book accuracy, and pre-change opening specialization. These variables do not produce robust post-change interactions after multiple-testing adjustment. The current data therefore do not support the claim that 5+0 primarily increased returns to opening preparation.
+
+This null result is useful because the reform plausibly could have rewarded memorized preparation: no increment makes early time savings valuable, and a five-minute base gives enough time for deeper prepared lines. The empirical evidence does not show that this mechanism dominates in the observed Titled Tuesday data.
+
+\subsubsection{Simplification Strategy}
+
+Simplification was measured using captures by move 20, queen-off indicators by moves 20 and 30, pieces remaining by move 30, material remaining by move 30, and a simplified-position indicator. The key hypotheses were that older players might simplify more after the switch and that simplification might protect them from the 5+0 penalty. These hypotheses are not robustly supported. Most interactions fail false-discovery adjustment, and the age-by-simplification interaction in result models is weak.
+
+\subsubsection{Uniform Complex-Position Deterioration}
+
+The complexity evidence is not a simple story that complex positions became worse for everyone. Some complexity interactions are statistically strong, but the signs indicate moderation by skill and age rather than a uniform increase in complex-position errors. The correct conclusion is that complexity changes the distribution of gains and losses under 5+0, not that all players make more errors in all complex positions.
+
+\subsubsection{Error Cascades}
+
+Error-cascade models tested whether a first blunder is more likely to be followed by another blunder or a higher next-five-move centipawn loss after the reform. These models do not produce robust post-change interactions for age, female status, or GDP. The main error-timing result is first-blunder timing, not post-blunder cascade behavior.
+
+\subsubsection{Repeated Opponent Familiarity}
+
+Repeated pairings are common enough to test whether prior meetings change move quality under the new format. Descriptively, repeated opponents have lower centipawn loss, but the post-change interaction terms are not robust. Prior meetings and prior directed score do not clearly reduce post-change blunder rates or centipawn loss in the Stockfish mechanism models.
+
+\subsubsection{Female/Male Late and Critical-Position Mechanisms}
+
+The female move-level interactions do not support a broad female-specific late or critical-position deterioration story. The interaction \(\text{Post} \times \text{Female} \times \text{CriticalEqual}\) is not robust, broad female blunder interactions are weak, and \(\text{Post} \times \text{Female} \times \text{Last10Ply}\) is negative in one model. The robust late and critical-position results are general and partly age-related, not clearly female-specific.
+
+\subsubsection{Within-Game Accuracy Decay Slope}
+
+For each player-game, an accuracy decay slope was estimated by regressing capped centipawn loss on move number. The post-by-age interaction is directionally interesting but has a q-value around 0.09. It is therefore not used as a headline result. Phase-specific late-game estimates and first-blunder timing provide stronger move-only evidence for within-game deterioration.
+
+\subsubsection{Conversion Heterogeneity by Age and Female Status}
+
+Conversion from winning positions by age and female status is suggestive but not robust after multiple-testing correction. The rating-advantage conversion result is strong; the age and female conversion interactions are not. The thesis therefore describes conversion technology mainly as a skill-premium mechanism rather than as an age or gender mechanism.
+
+\subsection{Summary of Unsupported Mechanisms}
+
+The null results sharpen the main interpretation. The reform does not appear to operate mainly through opening preparation, first-move advantage, GDP-based resource differences, broad gender effects, uniform complexity deterioration, simplification strategy, or error cascades. The supported mechanisms are more specific: higher returns to rating advantage, steeper accuracy-to-result conversion, late and critical-position costs, stronger conversion and defensive recovery by rating favorites, schedule-driven participation displacement, broad raw accuracy gains across neural style clusters, and negative relative score returns to chaotic pre-change style.

@@ -1,0 +1,39 @@
+# Data and generated artifacts are intentionally excluded from this replication package.
+*.csv
+*.rds
+*.RDS
+*.pgn
+*.sqlite
+*.db
+*.pt
+*.pth
+*.pkl
+*.jsonl
+*.zip
+*.xlsx
+*.xls
+
+# Local/runtime files
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.Rhistory
+.RData
+
+# LaTeX intermediates
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+
+# Browser/proxy/cache outputs
+playwright_chess_profile/
+scrape_outputs*/
+cache/
+tmp/
+outputs/
+analysis_outputs/

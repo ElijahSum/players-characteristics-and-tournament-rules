@@ -1,0 +1,234 @@
+\section{Empirical Strategy}
+
+\subsection{Treatment Definition and Interpretation}
+
+The treatment is the post-reform Titled Tuesday environment. Let \(\text{Post}_t\) be an indicator equal to one for events played on or after September 2, 2025 and zero for events before that date. In the code and result tables this variable is denoted \texttt{format\_5\_0}. It captures the combined institutional change from 3+1 with two weekly time slots to 5+0 with one weekly time slot.
+
+The treatment is not randomized. The empirical strategy therefore relies on within-player comparisons, event fixed effects, observable game controls, and robustness tests. The interpretation is strongest when estimates are stable across player fixed effects, event fixed effects, paired-game fixed effects, near-window samples, balanced-player samples, and placebo cutoffs. The interpretation is more cautious when placebo cutoffs or event studies show pre-existing trends.
+
+\input{tables/table8_empirical_design_catalog}
+
+\subsection{Baseline Player-Game Difference-in-Differences}
+
+The main player-game outcome is \(\text{Result}_{iget}\), the score result of player \(i\) in game \(g\) during event \(t\). It equals one for a win, one half for a draw, and zero for a loss. The baseline specification is:
+
+\begin{equation}
+\label{eq:baseline}
+Y_{iget}
+= \beta \left(\text{Post}_{t} \times X_{iget}\right)
++ \theta X_{iget}
++ \Gamma' W_{iget}
++ \alpha_i
++ \delta_t
++ \varepsilon_{iget}.
+\end{equation}
+
+\noindent Here \(Y_{iget}\) is the outcome, \(X_{iget}\) is the mechanism or player characteristic of interest, \(W_{iget}\) includes controls, \(\alpha_i\) are player fixed effects, and \(\delta_t\) are event fixed effects. The standard control set includes the player's rating, the opponent's rating, a White-piece indicator, and round fixed effects. Standard errors are clustered by player and event.
+
+The key coefficient is \(\beta\). For example, when \(X_{iget}\) is \(\text{rating\_diff100}_{iget}\), \(\beta\) measures how much more valuable a 100-point rating advantage became after the switch to 5+0. Because player fixed effects absorb time-invariant player strength and style, identification comes from changes in the value of within-player game circumstances after the rule change.
+
+Several variants of Equation \eqref{eq:baseline} are used:
+
+\begin{itemize}
+    \item event fixed effects with all rounds after round 1;
+    \item exclusion of rounds 1 and 2;
+    \item a near-window sample around the reform;
+    \item balanced-player samples containing players observed before and after the reform;
+    \item paired-game fixed effects using \(\alpha_i\) and game fixed effects, so the comparison is within the same game across the two players;
+    \item placebo cutoffs before September 2025;
+    \item event-study specifications by month relative to the reform.
+\end{itemize}
+
+The paired-game fixed-effect version is:
+
+\begin{equation}
+\label{eq:gamefe}
+Y_{iget}
+= \beta \left(\text{Post}_{t} \times X_{iget}\right)
++ \Gamma' W_{iget}
++ \alpha_i
++ \lambda_g
++ \varepsilon_{iget},
+\end{equation}
+
+\noindent where \(\lambda_g\) is a game fixed effect. This specification compares the two sides of the same game after absorbing game-level conditions common to both players.
+
+\subsection{Accuracy-to-Outcome Production Function}
+
+Let's proceed to an example of this regression specification in use. Accuracy is an in-game performance measure, not a predetermined characteristic. For this reason the accuracy specification is interpreted as a production-function test rather than a causal treatment effect of accuracy. The central question is whether the same measured accuracy advantage translated into more points under 5+0:
+
+\begin{equation}
+\label{eq:accuracy}
+\text{Result}_{iget}
+= \beta \left(\text{Post}_{t} \times \text{AccuracyDiff10}_{iget}\right)
++ \theta \text{AccuracyDiff10}_{iget}
++ \Gamma' W_{iget}
++ \alpha_i
++ \delta_t
++ \varepsilon_{iget}.
+\end{equation}
+
+\noindent \(\text{AccuracyDiff10}\) is the player's accuracy minus the opponent's accuracy, divided by 10. A positive \(\beta\) means that points became more tightly linked to observed move-quality advantages after the reform. This model is estimated with event fixed effects, paired-game fixed effects, round restrictions, placebo cutoffs, and event studies.
+
+Additional production-function models test whether rating favorites or online specialists convert a given accuracy edge more efficiently:
+
+\begin{equation}
+\label{eq:tripleaccuracy}
+\begin{aligned}
+\text{Result}_{iget}
+= {} & \beta_1(\text{Post}_t \times \text{AccuracyDiff10}_{iget}) \\
+& + \beta_2(\text{Post}_t \times \text{AccuracyDiff10}_{iget} \times Z_{iget}) \\
+& + \Gamma' W_{iget} + \alpha_i + \delta_t + \varepsilon_{iget}.
+\end{aligned}
+\end{equation}
+
+\noindent where \(Z_{iget}\) is rating advantage, online-capital advantage, or tournament-state status. The evidence below shows that accuracy conversion increased overall, but not mainly because the same accuracy edge became more valuable only for favorites or online specialists.
+
+\subsection{Time-Slot Displacement}
+
+The schedule component of the reform is analyzed separately. Pre-change events are classified as early or late based on event hour. For each player, \(\text{PreLateShare}_i\) is the share of pre-change events played in the late slot. A binary \(\text{LateRegular}_i\) indicator equals one for players with at least four pre-change events, at least three late events, and a late-share of at least 0.60.
+
+The game-level displacement model is:
+
+\begin{equation}
+\label{eq:timeslotgame}
+Y_{iget}
+= \beta(\text{Post}_t \times \text{PreLateShare}_i)
++ \Gamma' W_{iget}
++ \alpha_i
++ \delta_t
++ \varepsilon_{iget}.
+\end{equation}
+
+The tournament-level version uses player-event outcomes such as tournament score after round 1, rank percentile, mean accuracy after round 1, games completed, and completion indicators:
+
+\begin{equation}
+\label{eq:timeslottournament}
+Y_{iet}
+= \beta(\text{Post}_t \times \text{PreLateShare}_i)
++ \Gamma' W_{iet}
++ \alpha_i
++ \delta_t
++ \varepsilon_{iet}.
+\end{equation}
+
+Finally, selection into post-change participation is estimated at the player level:
+
+\begin{equation}
+\label{eq:participation}
+\text{PostParticipation}_{i}
+= \beta \text{PreLateShare}_{i}
++ \Gamma' Z_i
++ u_i,
+\end{equation}
+
+\noindent where \(Z_i\) includes pre-change event count, pre-change rating, and title controls. This model asks whether late-slot exposure predicts appearing in the post-change era at all.
+
+\subsection{Move-Level Stockfish Models}
+
+Move-level outcomes include capped centipawn loss, blunder indicators, mistake indicators, and inaccuracy indicators. Let \(m\) index a move by player \(i\) in game \(g\), tournament \(t\), and fullmove number \(n\). The baseline move-level mechanism model is:
+
+\begin{equation}
+\label{eq:movelevel}
+Y_{igmt}
+= \beta(\text{Post}_t \times M_{igmt})
++ \theta M_{igmt}
++ \Gamma' W_{igmt}
++ \alpha_i
++ \delta_t
++ \mu_n
++ \varepsilon_{igmt}.
+\end{equation}
+
+\noindent \(M_{igmt}\) is a move environment indicator such as late phase, final ten plies, or critical equal position. \(\mu_n\) are fullmove-number fixed effects. Standard errors are clustered by player and tournament. A positive \(\beta\) in the centipawn-loss model means that the relevant move environment became more costly after the reform.
+
+Age and gender heterogeneity are estimated with triple interactions:
+
+\begin{equation}
+\label{eq:movetriple}
+Y_{igmt}
+= \beta_1(\text{Post}_t \times M_{igmt})
++ \beta_2(\text{Post}_t \times H_i)
++ \beta_3(\text{Post}_t \times H_i \times M_{igmt})
++ \Gamma' W_{igmt}
++ \alpha_i
++ \delta_t
++ \mu_n
++ \varepsilon_{igmt},
+\end{equation}
+
+\noindent where \(H_i\) is age in ten-year units, female status, GDP, or another player characteristic. The coefficient \(\beta_3\) tests whether the post-change cost of a given move environment differs across player types.
+
+\subsection{Clock-Time Mechanism Models}
+
+Clock-time models use the same reform indicator but replace board-state indicators with direct remaining-time measures. At the player-game level, the main exposure model estimates whether low-clock shares changed after the reform:
+
+\begin{equation}
+\label{eq:clockexposure}
+\text{LowClockShare}_{igt}
+= \beta \text{Post}_t
++ \Gamma' W_{igt}
++ \alpha_i
++ \delta_t
++ \varepsilon_{igt}.
+\end{equation}
+
+\noindent At the move level, the panic-threshold specification bins the player's remaining time before the move:
+
+\begin{equation}
+\label{eq:clockbins}
+Y_{igmt}
+= \sum_b \beta_b \mathbf{1}\{\text{ClockBin}_{igmt}=b\}
++ \sum_b \gamma_b \left(\text{Post}_t \times \mathbf{1}\{\text{ClockBin}_{igmt}=b\}\right)
++ \alpha_i+\delta_t+\mu_n+\varepsilon_{igmt}.
+\end{equation}
+
+\noindent The omitted bin is more than 120 seconds. The coefficients \(\gamma_b\) measure whether the post-change quality penalty is different in each low-clock region. Additional clock specifications use event time around the first crossing below 30 or 10 seconds, recovery above 10 seconds after first low-clock entry, and player-game conversion outcomes conditional on own or opponent low clock at the first +2 or -2 engine state.
+
+\subsection{Conversion and Defensive Recovery}
+
+Conversion and defensive recovery are estimated at the player-game level. A player is classified as reaching a winning position if the engine evaluation reaches at least +200 centipawns from that player's perspective at least ten plies before the end. The main conversion outcome equals one if the player eventually wins:
+
+\begin{equation}
+\label{eq:conversion}
+\text{Converted}_{igt}
+= \beta(\text{Post}_t \times \text{RatingDiff100}_{igt})
++ \Gamma' W_{igt}
++ \alpha_i
++ \delta_t
++ \varepsilon_{igt}.
+\end{equation}
+
+The defensive recovery model is symmetric. A player is classified as reaching a losing position if the evaluation falls to -200 centipawns or worse. The escape outcome equals one if the player eventually draws or wins:
+
+\begin{equation}
+\label{eq:escape}
+\text{Escaped}_{igt}
+= \beta(\text{Post}_t \times \text{RatingDiff100}_{igt})
++ \Gamma' W_{igt}
++ \alpha_i
++ \delta_t
++ \varepsilon_{igt}.
+\end{equation}
+
+Additional deep-conversion outcomes include plies to conversion after +2, whether the advantage falls back below equality after +2, centipawn recovery after -2, and defensive recovery probability. These models connect the game-level skill premium to concrete advantage-management behavior.
+
+\subsection{Style and Pre-Change Traits}
+
+The style analysis uses pre-change player traits to avoid post-treatment bias. Let \(S_i^{pre}\) denote a style index computed only from games before September 2025. The main style specification is:
+
+\begin{equation}
+\label{eq:style}
+\text{Result}_{iget}
+= \beta(\text{Post}_t \times S_i^{pre})
++ \Gamma' W_{iget}
++ \alpha_i
++ \delta_t
++ \varepsilon_{iget}.
+\end{equation}
+
+Since \(S_i^{pre}\) is time-invariant at the player level, its main effect is absorbed by player fixed effects. The interaction with \(\text{Post}_t\) measures whether a pre-existing style profile became more or less rewarded after the reform. The most important style indexes are clean style, chaos creation, self-risk, and practical chaos. Related pre-change trait models use defensive skill, complexity tolerance, conversion skill, opening specialization, and cascade resilience as predetermined moderators of post-change performance.
+
+\subsection{Inference and Multiple Testing}
+
+Most regressions use two-way clustered standard errors at the player and event level, or player and game level in paired-game specifications. Move-level models use player and tournament clustering. Because the research design tests many mechanisms, the reported result tables include both raw p-values and Benjamini-Hochberg adjusted q-values where appropriate. The thesis emphasizes results that are statistically strong, economically meaningful, and stable across robustness checks. Results that appear only in one exploratory specification or fail false-discovery adjustment are reported in the null and weak-results section rather than treated as main findings.

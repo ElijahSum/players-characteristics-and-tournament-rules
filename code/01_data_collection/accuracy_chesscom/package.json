@@ -1,0 +1,10 @@
+{
+  "name": "chess-single-link-scraper",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@cloudflare/playwright": "^0.0.17",
+    "typescript": "^5.8.0",
+    "wrangler": "^4.11.0"
+  }
+}

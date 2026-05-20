@@ -1,6 +1,6 @@
 # Player Characteristics and Adaptability to Temporal Constraints
 
-Master thesis replication package, National Research University Higher School of Economics, Faculty of Computer Science, Master of Data Science, 2026.
+Master thesis repository, HSE University, Faculty of Computer Science, Master of Data Science, 2026.
 
 Topic: **Player Characteristics and Adaptability to Temporal Constraints: Evidence from Titled Tuesday Chess Tournaments**
 
@@ -145,21 +145,11 @@ Rscript requirements.R
 
 For Stockfish-based replication, download a compatible Stockfish binary separately and pass its path to `code/02_data_construction/stockfish_centipawn_loss/calculate_centipawn_loss.py`.
 
-## Reproducibility
-
-There are three practical reproduction modes:
-
-**1. Full reconstruction.** Restore the external inputs listed in [`data/DATA_REQUIREMENTS.md`](data/DATA_REQUIREMENTS.md), install Python/R dependencies, supply a Stockfish binary, then run the pipeline in the order described in [`docs/RUN_ORDER.md`](docs/RUN_ORDER.md).
-
-**2. Analysis rerun from restored derived files.** Restore the final player-game panel, PGN waves, Stockfish outputs, move-clock feature tables, style artifacts, and analysis-output CSVs. Then rerun the scripts under `code/03_analysis/` and `code/04_reporting/`.
-
-**3. Thesis inspection only.** Use [`main.pdf`](main.pdf), the LaTeX source under `paper/`, generated figures under `paper/figures/`, and generated tables under `paper/tables/`.
-
-The repository is organized as a replication workflow, but it is not self-contained without the excluded raw and derived data files.
-
 ## Data
 
-The raw and derived data are excluded because they are large, generated, private, or environment-specific. A full rerun requires:
+The raw and derived data are excluded because they are large. You can write me in Telegram and I will provide you with the link to my Dropbox folder with all the data.
+
+A full rerun requires:
 
 - Titled Tuesday tournament metadata with game links, rounds, scores, ratings, colors, results, event identifiers, and dates;
 - player metadata with Chess.com usernames, real names where available, FIDE identifiers where available, titles, gender, federations, birth years, and country variables;
@@ -171,10 +161,3 @@ The raw and derived data are excluded because they are large, generated, private
 
 Expected input and output locations are documented in [`data/DATA_REQUIREMENTS.md`](data/DATA_REQUIREMENTS.md).
 
-## License
-
-No explicit license file is currently included in this repository.
-
-## Contact
-
-GitHub: [@ElijahSum](https://github.com/ElijahSum)
